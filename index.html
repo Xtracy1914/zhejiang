@@ -1,0 +1,100 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=pie-roseType-simple&code=PYBwLglsB2AEC8sDeBYAULWkwBsCmAXMuppmHgB5hEDkgmraD6NoIDugICqBAeoDmKgiuaBgSoMB6gUYNArYo0ANCVLkqAZTABPfEVQZSmAGYww0iAC9CsGgGYADCAo0JmAL7iVmfGuoGAxnmjkATmMtZQRAEzGEjYS-ADmbgAmSj5gfgYARsBgcQC2FiohKnHAOEkUMXawAM4AFsAA7kRgHgCueLaqangAhmC1HvrKqpipLR4A1kol5VVYdXiwWT2wkW0tAGoQeGNII5XVE6KwnS2RAPLQOHJEai04xZPTPZ3FcZ3DZRvj9VONPcUtAG54AILFAEk-hFHqNNq8rD5IZl3pcPMtikQANo-bo9aAtVL6GgAOQgYVKkGgYXOkwAwqV-mBvEUyHIQNiQMsaTMPHsILVEbAkQBWYzbfx8gC671UrnceA8yJofIApGIDHKaCKfJgPMBLgAVenY_qtFk9CDkVKyBRdVWkJIeSKSgBK7M5RAAHBbrqo5mAWsiLZg1l9zvUiIYAIwAFn5sAxWNogEo7QB7umwaG8fchYP6cIHYP4nYZDNso9jAA_KCaTbp6foD-n8ADYAOwATnzmOxgEXEwByyonk7TSBWM1XDDzG5Hm7RALbmJa7M19acrARDEYLtEAgdqAI5tO2XVL3M4F_Hnh9GDIBeOUALDbr0Xlmd9ojBwxOnlNg80QCzfoAXRTPKa3-mDwerQ8XBkAIwiJw3HtL0zesfwfbFADU7YDz03MD9GrQw_xHAxAEg1N9S3g0D023J1gyg2hAHwgwBHHXXC0hShCQqLQKwAG4gA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/china.js"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  title: {
+    text: '浙江省各市农村分布情况',
+    textStyle: {
+      fontSize: '30px'
+    },
+    left: 'center',
+    top: 20
+  },
+  legend: {
+    top: 'bottom'
+  },
+  toolbox: {
+    show: true,
+    feature: {
+      mark: { show: true },
+      dataView: { show: true, readOnly: false },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  series: [
+    {
+      name: 'Nightingale Chart',
+      type: 'pie',
+      radius: [50, 250],
+      center: ['50%', '50%'],
+      roseType: 'area',
+      itemStyle: {
+        borderRadius: 8
+      },
+      data: [
+        { value: 3140, name: '温州市' },
+        { value: 2833, name: '台州市' },
+        { value: 2679, name: '金华市' },
+        { value: 2359, name: '杭州市' },
+        { value: 2310, name: '宁波市' },
+        { value: 2023, name: '丽水市' },
+        { value: 1385, name: '绍兴市' },
+        { value: 1169, name: '衢州市' },
+        { value: 916, name: '湖州市' },
+        { value: 639, name: '嘉兴市' },
+        { value: 281, name: '舟山市' }
+      ]
+    }
+  ]
+};
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
